@@ -1,22 +1,24 @@
 // @ts-nocheck
-import styled from './Header.module.pcss'
+import styles from './Header.module.pcss'
 import cn from 'classnames'
-import { Button } from '@components'
+import { Button, Wrapper, Icon } from '@components'
 
 const Header = () => {
 	return (
-		<header className={cn(styled.header)}>
-			<div className={cn(styled.container, styled.header__container)}>
-				<a className={cn(styled.header__link)} href="#" aria-label="На главную">
-					<img className={cn(styled.header__logo)} src="././././img/logo.svg" alt="UberEats" title="UberEats" />
-				</a>
-				<div className={cn(styled.header__navigation)}>
-					<Button className={cn(styled.button, styled.button_outlined)} onclick="alert('Дратути')">Войти</Button>
-					<a className={cn(styled.button, styled.button_default, styled.button_icon, styled.hidden_xs)} href="#" aria-label="Корзина">
-						<span className={cn(styled.icon, styled.icon_basket)} aria-label="Иконка корзины"></span>
+		<header className={cn(styles.header)}>
+			<Wrapper>
+				<div className={cn(styles.headerContainer)}>
+					<a className={cn(styles.headerLink)} href="#" aria-label="На главную">
+						<img className={cn(styles.headerLogo)} src="../../../img/logo.svg" alt="UberEats" title="UberEats" />
 					</a>
+					<div className={cn(styles.headerNavigation)}>
+						<Button variant='outlined' onClick={() => alert('Hello')}>Войти</Button>
+						<Button as='a' variant='default' type='icon' className={cn('hidden_xs')} href="#" aria-label="Корзина">
+							<Icon variant='basket' aria-label="Иконка корзины" />
+						</Button>
+					</div>
 				</div>
-			</div>
+			</Wrapper>
     	</header>
 	)
 }
