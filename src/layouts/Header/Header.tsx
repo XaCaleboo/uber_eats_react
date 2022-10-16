@@ -13,7 +13,7 @@ const Header = () => {
 					</a>
 					<div className={cn(styles.headerNavigation)}>
 						<Button variant='outlined' onClick={() => alert('Hello')}>Войти</Button>
-						<Button as='a' variant='default' type='icon' className={cn('hidden_xs')} href="#" aria-label="Корзина">
+						<Button as='a' variant='default' kind='icon' className={cn('hidden_xs')} href="#" aria-label="Корзина">
 							<Icon variant='basket' aria-label="Иконка корзины" />
 						</Button>
 					</div>
