@@ -1,12 +1,19 @@
 // @ts-nocheck
 import { Header } from '@layouts'
-import { Search } from './components'
+import { Wrapper } from '@components'
+import { Search, Restaurants, Heading, Card } from './components'
 
 const Main = () => {
 	return (
 		<>
 			<Header />
-			<Search />
+			<Wrapper>
+				<Search />
+				<Restaurants>
+					<Heading />
+					<Card />
+				</Restaurants>
+			</Wrapper>
 		</>
 	)
 }
