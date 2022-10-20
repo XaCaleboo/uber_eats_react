@@ -1,9 +1,9 @@
 // @ts-nocheck
-import cn from 'classnames'
+import styles from './Heading.module.pcss'
 
 const Heading = () => {
     return (
-        <h1 className={cn('typo', 'typo_h2')}>
+        <h1 className={styles.heading}>
             Рестораны в Москве
         </h1>
     )

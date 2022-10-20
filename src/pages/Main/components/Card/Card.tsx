@@ -1,22 +1,26 @@
 // @ts-nocheck
 import styles from './Card.module.pcss'
-import cn from 'classnames'
 
-const Card = () => {
+const Card = ( title, price, rub, category, time ) => {
     return (
         <section>
-            <a className={cn(styles.card)} href="#">
-                <header className={cn(styles.cardDescription)}>
-                    <h2 className={cn('typo', 'typo_h3')}>Макдоналдс - Газетный</h2>
-                    <p className={cn('typo', 'typo_h4', 'typo_color_secondary')}>
-                        <span className={cn('visually-hidden')}>Средняя ценовая категория</span>
-                        <span aria-hidden="true">₽₽</span> • Бургеры
+            <a className={styles.card} href="#">
+                <header className={styles.cardDescription}>
+                    <h2 className={styles.cardTitle}>{title}</h2>
+                    <p className={styles.cardPrice}>
+                        <span className={'visually-hidden'}>{price}</span>
+                        <span aria-hidden="true">{rub}</span> • {category}
                     </p>
-                    <p className={cn('typo', 'typo_h5')}>
-                        25 - 35 мин
+                    <p className={styles.cardTime}>
+                        {time}
                     </p>
                 </header>
-                <img className={cn(styles.cardPhoto)} src="img/McD.png" alt="Макдональдс" title="Макдональдс" />
+                <img 
+                    className={styles.cardPhoto} 
+                    src="img/McD.png" 
+                    alt="Макдональдс" 
+                    title="Макдональдс"
+                />
             </a>
         </section>
     )

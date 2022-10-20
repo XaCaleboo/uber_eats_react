@@ -2,8 +2,8 @@
 import cn from 'classnames'
 import styles from './Button.module.pcss'
 
-const Button = ({ children, className, variant, as, kind, ...props }) => {
-	const Tag = as ?? 'button'
+const Button = ({ children, className, variant = 'default', as = 'button', kind, ...props }) => {
+	const Tag = as 
 
 	return (
 		<Tag
@@ -11,8 +11,9 @@ const Button = ({ children, className, variant, as, kind, ...props }) => {
 				styles.button,
 				{[styles.buttonDefault]: variant === 'default'},
 				{[styles.buttonOutlined]: variant === 'outlined'},
-				{[styles.buttonButtonIcon]: kind === 'icon'},
-				className)}
+				{[styles.buttonIcon]: kind === 'icon'},
+				className
+			)}
 			{...props}
 		>
 			{children}

@@ -1,8 +1,8 @@
 // @ts-nocheck
 import cn from 'classnames'
-import styles from './Wrapper.module.pcss'
+import styles from './Container.module.pcss'
 
-const Wrapper = ({ children, className, ...props }) => {
+const Container = ({ children, className, ...props }) => {
 	return (
 		<div
 			className={cn(styles.container, className)}
@@ -13,4 +13,4 @@ const Wrapper = ({ children, className, ...props }) => {
 	)
 }
 
-export default Wrapper
+export default Container

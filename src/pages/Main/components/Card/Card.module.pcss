@@ -19,6 +19,21 @@
         border-color: var(--color-typo-accent);
     }
 
+    &__title {
+        font: var(--typo-h3);
+        color: var(--color-typo-main)
+    }
+
+    &__price {
+        font: var(--typo-h4);
+        color: var(--color-typo-secondary)
+    }
+
+    &__time {
+        font: var(--typo-h5);
+        color: var(--color-typo-main)
+    }
+
     &__photo {
         display: block;
         width: 100%;
@@ -26,7 +41,7 @@
     
         object-fit: cover;
     
-        @media #{$only-xs} {
+        @media (--only-xs) {
             height: 246px;
         }
     }
