@@ -1,7 +1,7 @@
 // @ts-nocheck
 import styles from './Card.module.pcss'
 
-const Card = ( title, price, rub, category, time ) => {
+const Card = ({ title, price, rub, category, time, image, alt, imageTitle }) => {
     return (
         <section>
             <a className={styles.card} href="#">
@@ -17,9 +17,9 @@ const Card = ( title, price, rub, category, time ) => {
                 </header>
                 <img 
                     className={styles.cardPhoto} 
-                    src="img/McD.png" 
-                    alt="Макдональдс" 
-                    title="Макдональдс"
+                    src={image} 
+                    alt={alt} 
+                    title={imageTitle}
                 />
             </a>
         </section>
