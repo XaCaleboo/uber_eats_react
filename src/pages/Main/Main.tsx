@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { Header } from '@layouts'
-import { Container } from '@components'
-import { Search, Restaurants, Heading, Card } from './components'
+import { Search, Restaurants, Card } from './components'
 
 const Main = () => {
 
@@ -20,7 +19,7 @@ const Main = () => {
 			title: 'DimSum & Co — ЦДМ',
 			price: 'Низкая ценовая категория',
 			rub: '₽',
-			category: ' • Японская • Китайская • Азиатская',
+			category: 'Японская • Китайская • Азиатская',
 			time: '40 - 50 мин',
 			image: '/DimSum.png',
 			alt: 'DimSum & Co',
@@ -30,7 +29,7 @@ const Main = () => {
 			title: 'ДвижОК — Манежная',
 			price: 'Низкая ценовая категория',
 			rub: '₽',
-			category: ' • Американская • Европейская',
+			category: 'Американская • Европейская',
 			time: '35 - 45 мин',
 			image: '/DvizhOK.png',
 			alt: 'ДвижОК',
@@ -40,7 +39,7 @@ const Main = () => {
 			title: 'НЯ — NHA',
 			price: 'Средняя ценовая категория',
 			rub: '₽₽',
-			category: ' • Вьетнамская',
+			category: 'Вьетнамская',
 			time: '30 - 40 мин',
 			image: '/NHA.png',
 			alt: 'НЯ — NHA',
@@ -50,7 +49,7 @@ const Main = () => {
 			title: 'Точка Дзы — Цветной',
 			price: 'Средняя ценовая категория',
 			rub: '₽₽',
-			category: ' • Вьетнамская',
+			category: 'Вьетнамская',
 			time: '40 - 50 мин',
 			image: '/Point.png',
 			alt: 'Точка Дзы',
@@ -60,7 +59,7 @@ const Main = () => {
 			title: 'Cinnabon',
 			price: 'Низкая ценовая категория',
 			rub: '₽',
-			category: ' • Выпечка • Десерты • Капкейки',
+			category: 'Выпечка • Десерты • Капкейки',
 			time: '25 - 35 мин',
 			image: '/Cinnabon.png',
 			alt: 'Cinnabon',
@@ -70,7 +69,7 @@ const Main = () => {
 			title: 'PIZZELOVE',
 			price: 'Средняя ценовая категория',
 			rub: '₽₽',
-			category: ' • Пицца',
+			category: 'Пицца',
 			time: '15 - 25 мин',
 			image: '/Pizzelove.png',
 			alt: 'PIZZELOVE',
@@ -80,7 +79,7 @@ const Main = () => {
 			title: 'Zю кафе — Тверская',
 			price: 'Средняя ценовая категория',
 			rub: '₽₽',
-			category: ' • Японская',
+			category: 'Японская',
 			time: '25 - 35 мин',
 			image: '/Zu.png',
 			alt: 'Zю кафе',
@@ -90,7 +89,7 @@ const Main = () => {
 			title: 'Bar BQ Cafe — Манежная',
 			price: 'Высокая ценовая категория',
 			rub: '₽₽₽',
-			category: ' • Европейская',
+			category: 'Европейская',
 			time: '30 - 40 мин',
 			image: '/Barbq.png',
 			alt: 'Bar BQ Cafe',
@@ -101,25 +100,22 @@ const Main = () => {
 	return (
 		<>
 			<Header />
-			<Container>
-				<Search />
-				<Restaurants>
-					<Heading />
-						{restaurants.map((restaurant, index) => (
-							<Card 
-								key={index}
-								title={restaurant.title} 
-								price={restaurant.price} 
-								rub={restaurant.rub} 
-								category={restaurant.category} 
-								time={restaurant.time}
-								image={restaurant.image}
-								alt={restaurant.alt}
-								imageTitle={restaurant.imageTitle} 
-							/>
-						))}
-				</Restaurants>
-			</Container>
+			<Search />
+			<Restaurants>
+				{restaurants.map((restaurant, index) => (
+					<Card 
+						key={index}
+						title={restaurant.title} 
+						price={restaurant.price} 
+						rub={restaurant.rub} 
+						category={restaurant.category} 
+						time={restaurant.time}
+						image={restaurant.image}
+						alt={restaurant.alt}
+						imageTitle={restaurant.imageTitle} 
+					/>
+				))}
+			</Restaurants>
 		</>
 	)
 }
