@@ -10,7 +10,7 @@ const Header = () => {
 					<a className={styles.headerLink} href="#" aria-label="На главную">
 						<img 
 							className={styles.headerLogo} 
-							src="/logo.svg" 
+							src="/img/logo.svg" 
 							alt="UberEats" 
 							title="UberEats"
 						/>

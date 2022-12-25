@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Макдоналдс - Газетный",
+        "price": "medium",
+        "category": ["Бургеры"],
+        "time": {"from": 25, "to": 35},
+        "image": "/img/McD.png",
+        "alt": "Макдональдс"
+    },
+    {
+        "title": "DimSum & Co — ЦДМ",
+        "price": "low",
+        "category": ["Японская", "Китайская", "Азиатская"],
+        "time": {"from": 40, "to": 50},
+        "image": "/img/DimSum.png",
+        "alt": "DimSum & Co"
+    },
+    {
+        "title": "ДвижОК — Манежная",
+        "price": "low",
+        "category": ["Американская", "Европейская"],
+        "time": {"from": 35, "to": 45},
+        "image": "/img/DvizhOK.png",
+        "alt": "ДвижОК"
+    },
+    {
+        "title": "НЯ — NHA",
+        "price": "medium",
+        "category": ["Вьетнамская"],
+        "time": {"from": 30, "to": 40},
+        "image": "/img/NHA.png",
+        "alt": "НЯ — NHA"
+    },
+    {
+        "title": "Точка Дзы — Цветной",
+        "price": "medium",
+        "category": ["Вьетнамская"],
+        "time": {"from": 40, "to": 50},
+        "image": "/img/Point.png",
+        "alt": "Точка Дзы"
+    },
+    {
+        "title": "Cinnabon",
+        "price": "low",
+        "category": ["Выпечка", "Десерты", "Капкейки"],
+        "time": {"from": 25, "to": 35},
+        "image": "/img/Cinnabon.png",
+        "alt": "Cinnabon"
+    },
+    {
+        "title": "PIZZELOVE",
+        "price": "medium",
+        "category": ["Пицца"],
+        "time": {"from": 15, "to": 25},
+        "image": "/img/Pizzelove.png",
+        "alt": "PIZZELOVE"
+    },
+    {
+        "title": "Zю кафе — Тверская",
+        "price": "medium",
+        "category": ["Японская"],
+        "time": {"from": 25, "to": 35},
+        "image": "/img/Zu.png",
+        "alt": "Zю кафе"
+    },
+    {
+        "title": "Bar BQ Cafe — Манежная",
+        "price": "high",
+        "category": ["Европейская"],
+        "time": {"from": 30, "to": 40},
+        "image": "/img/Barbq.png",
+        "alt": "Bar BQ Cafe"
+    }
+]
