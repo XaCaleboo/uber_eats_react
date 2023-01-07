@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { useEffect, useState } from 'react'
 
-import { Header } from '@layouts'
+import { Header, Footer } from '@layouts'
 import { Search, Restaurants } from './components'
 
 const Main = () => {
@@ -24,6 +24,7 @@ const Main = () => {
 			<Header />
 			<Search />
 			<Restaurants items={restaurants} />
+			<Footer />
 		</>
 	)
 }

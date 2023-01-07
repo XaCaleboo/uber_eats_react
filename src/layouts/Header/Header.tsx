@@ -29,7 +29,7 @@ const Header = () => {
 					</div>
 				</div>
 			</Container>
-    	</header>
+		</header>
 	)
 }
 
