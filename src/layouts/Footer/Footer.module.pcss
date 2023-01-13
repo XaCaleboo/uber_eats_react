@@ -64,7 +64,6 @@
 
     &__navigation {
         display: grid;
-
         grid-template-columns: 1fr;
         column-gap: 60px;
 
@@ -72,6 +71,14 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
 
+    }
+
+    &__section-shops {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding-top: 8px;
     }
 
     &__shops {
@@ -92,11 +99,26 @@
         height: 40px;
     }
 
+	&__section-terms {
+		display: grid;
+		grid-template-columns: 1fr;
+		column-gap: 60px;
+
+		padding-top: 8px;
+
+		@media (--above-md) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+
     &__terms {
         display: block;
 
-        text-decoration: none;
+		margin: 0;
+
+        font: var(--typo-h6);
         color: var(--color-typo-reverse);
+        text-decoration: none;
 
         outline: none;
         
@@ -117,7 +139,7 @@
     }
 
     &__socials {
-		
+        
         &__icons {
             display: inline-block;
             padding-top: 16px;

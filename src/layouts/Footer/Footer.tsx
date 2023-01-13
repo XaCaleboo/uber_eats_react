@@ -40,6 +40,25 @@ const Footer = () => {
 						</div>
 					</div>
 				</section>
+
+				<section className={styles.footerSection} aria-label="Мы в App Store и Google Play">
+					<div className={styles.footerSectionShops}>
+						<a className={styles.footerShops} href="#" aria-label="App store">
+							<img className={styles.footerShopsImage} src="img/app-store.png" alt="App Store" title="App Store"/>
+						</a>
+						<a className={styles.footerShops} href="#" aria-label="Google Play">
+							<img className={styles.footerShopsImage} src="img/google-play.png" alt="Google Play" title="Google Play"/>
+						</a>
+					</div>
+            	</section>
+
+				<section className={styles.footerSection} aria-label="Политика компании">
+					<div className={styles.footerSectionTerms}>
+						<p className={styles.footerTerms}>© 2017 Uber Technologies Inc.</p>
+						<a className={styles.footerTerms} href="#">Обработка персональных данных</a>
+						<a className={styles.footerTerms} href="#">Пользовательское соглашение</a>
+					</div>
+            	</section>
 			</Container>
 		</footer>
 	)
