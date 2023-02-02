@@ -14,7 +14,7 @@
 		min-width: 100%;
 	}
 
-	&_chosen {
+	&__combobox {
 		display: grid;
 		grid-template-columns: 16px 1fr 14px;
 		column-gap: 16px;
@@ -50,7 +50,7 @@
 		}
 	}
 
-	&_dropdown {
+	&__listbox {
 		position: absolute;
 
 		width: 100%;
@@ -64,9 +64,13 @@
 			max-width: none;
 			min-width: 100%;
 		}
+
+		&--hidden {
+			display: none;
+		}
 	}
 
-	&_item {
+	&__option {
 		padding-top: 7px;
 		padding-bottom: 7px;
 		padding-left: 48px;
@@ -88,6 +92,12 @@
 		}
 
 		&:focus {
+			outline: 1px solid var(--color-typo-accent);
+			box-shadow: 0 0 0 1px var(--color-typo-accent);
+			border-radius: 2px;
+		}
+
+		&--active {
 			outline: 1px solid var(--color-typo-accent);
 			box-shadow: 0 0 0 1px var(--color-typo-accent);
 			border-radius: 2px;

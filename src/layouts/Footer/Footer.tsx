@@ -1,6 +1,6 @@
 // @ts-nocheck
 import styles from './Footer.module.pcss'
-import { Container, Icon, Select } from '@components'
+import { Container, Icon, Select, Option } from '@components'
 
 const Footer = () => {
 	return (
@@ -16,7 +16,10 @@ const Footer = () => {
 					<div className={styles.footerNavigation}>
 						<div className={styles.footerColumn}>
 							<section className={styles.footerSocials}>
-								<Select />
+								<Select defaultIndex={0}>
+									<Option value='ru' selected>Русский</Option>
+									<Option value='en'>English</Option>
+								</Select>
 								<p className={styles.footerTag}>
 									<span className={styles.footerHashtag}>#</span>UberEats
 								</p>

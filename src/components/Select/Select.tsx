@@ -1,55 +1,79 @@
 // @ts-nocheck
-import { useState } from 'react'
+import { useState, useRef, Children, isValidElement, cloneElement, useEffect } from 'react'
+import { useSelect } from './useSelect';
+import uuid from 'react-uuid';
 import { Icon } from '@components'
 import styles from './Select.module.pcss'
+import cn from 'classnames'
 
-const Select = () => {
-	const [isOpen, setIsOpen] = useState(false)
-	const [selectedOption, setSelectedOption] = useState('Русский')
+const Select = ({ defaultIndex, children }) => {
+	const comboRef = useRef(null)
+	const listboxRef = useRef(null)
+	const optionsRef = useRef([])
 
-	const options = ["Русский", "English"];
+	useEffect(() => {
+		console.log(`children`, children)
+		// Children.map(children, (child, index) => {
+		// 	console.log(`child ${index}`, child)
+		// })
+	},[children])
 
-	const toggling = () => setIsOpen(!isOpen)
+	const { 
+		opened, 
+		activeIndex, 
+		selectedIndex,
+		onComboBlur, 
+		onComboClick, 
+		onComboKeyDown,
+		onOptionClick,
+		onOptionMouseDown,
+	} = useSelect({ children, defaultIndex, comboRef, listboxRef, optionsRef })
 
-	const onOptionClick = value => () => {
-		setSelectedOption(value);
-    	setIsOpen(false);
-	}
+	const [idBase] = useState(uuid())
 
 	return (
 		<div className={styles.select}>
-			
 			<button 
-				className={styles.selectChosen} 
-				onClick={toggling} 
-				aria-controls="listbox1" 
-				aria-expanded="false" 
+				className={styles.selectCombobox}
+				id={idBase} 
+				aria-controls={`${idBase}-listbox`} 
+				aria-expanded={opened} 
 				aria-haspopup="listbox"
+				aria-activedescendant={opened ? `${idBase}-${activeIndex}` : ''}
 				role="combobox"
-				tabindex="0"
+				ref={comboRef}
+				tabIndex="0"
+				onBlur={onComboBlur}
+				onClick={onComboClick}
+				onKeyDown={onComboKeyDown}
 			>
 				<Icon variant='world' />
-				{selectedOption}
+				{children[selectedIndex].props.children}
+				{/* {options[selectedIndex]} */}
 				<Icon variant='dropdown' />
 			</button>
+			<div 
+				className={cn(styles.selectListbox, {[styles.selectListboxHidden]: !opened })}
+				id={`${idBase}-listbox`}
+				role="listbox"
+				ref={listboxRef}
+				tabIndex="-1"
+			>
+				{Children.map(children, (child, index) => {
+					if (isValidElement(child)) {
+						return cloneElement(child, {
+							isActive: activeIndex === index,
+							id: `${idBase}-${index}`,
+							ref: (element) => optionsRef.current.push(element),
+							isSelected: selectedIndex === index,
+							onClick: onOptionClick(index),
+							onMouseDown: onOptionMouseDown,
+						})
+					}
 
-			{isOpen && 
-				<div 
-					className={styles.selectDropdown}
-					role="listbox"
-					tabindex="-1"
-				>
-					{options.map(option => (
-						<button 
-							className={styles.selectItem}
-							onClick={onOptionClick(option)}
-							key={Math.random()}
-						>
-							{option}
-						</button>
-              		))}
-				</div>
-			}
+					return child
+				})}
+			</div>
 		</div>
 	)
 }

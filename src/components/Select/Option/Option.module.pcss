@@ -1,0 +1,35 @@
+.option {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 48px;
+
+	min-width: 100%;
+
+	font: var(--typo-4);
+	color: var(--color-typo-reverse);
+	text-align: left;
+
+	border: none;
+
+	background-color: var(--color-background-select);
+
+	&:hover {
+		color: var(--color-typo-main);
+
+		background-color: var(--color-background-main)
+	}
+
+	&:focus {
+		outline: 1px solid var(--color-typo-accent);
+		box-shadow: 0 0 0 1px var(--color-typo-accent);
+		border-radius: 2px;
+	}
+
+	&--active {
+		outline: 1px solid var(--color-typo-accent);
+		box-shadow: 0 0 0 1px var(--color-typo-accent);
+		border-radius: 2px;
+	}
+}
+		
+	
