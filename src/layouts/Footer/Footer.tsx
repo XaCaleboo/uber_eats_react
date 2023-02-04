@@ -1,8 +1,11 @@
 // @ts-nocheck
 import styles from './Footer.module.pcss'
 import { Container, Icon, Select, Option } from '@components'
+import { useState } from 'react'
 
 const Footer = () => {
+	const [lang, setLang] = useState('ru')
+
 	return (
 		<footer className={styles.footer}>
 			<Container>
@@ -16,7 +19,7 @@ const Footer = () => {
 					<div className={styles.footerNavigation}>
 						<div className={styles.footerColumn}>
 							<section className={styles.footerSocials}>
-								<Select defaultIndex={0}>
+								<Select value={lang} onChange={setLang} placeholder="Выберите язык">
 									<Option value='ru' selected>Русский</Option>
 									<Option value='en'>English</Option>
 								</Select>

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Main } from '@pages'
 
 const App = () => {

@@ -18,4 +18,6 @@ const Option = forwardRef(({ children, isActive, isSelected, ...props }, ref) =>
 	)
 })
 
+Option.displayName = 'Option'
+
 export default Option

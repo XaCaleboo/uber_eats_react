@@ -2,13 +2,15 @@
 import { useState, Children } from "react"
 import { isElementInView, isScrollable, maintainScrollVisibility, getUpdatedIndex, getActionFromKey, SelectActions } from "./utils"
 
-const useSelect = ({ children, defaultIndex, comboRef, listboxRef, optionsRef }) => {
+const useSelect = ({ children, comboRef, listboxRef, optionsRef, value, onChange }) => {
 	const minIndex = 0
 	const maxIndex = Children.count(children) - 1
 
 	const [opened, setOpened] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(minIndex)
-	const [selectedIndex, setSelectedIndex] = useState(defaultIndex)//findIndex from children
+	const [selectedIndex, setSelectedIndex] = useState(() => (
+		children.findIndex((element) => element.props.value === value)
+	))
 	const [ignoreBlur, setIgnoreBlur] = useState(false)
 
 	const updateMenuState = (newOpenedState, callFocus = true) => {
@@ -25,6 +27,7 @@ const useSelect = ({ children, defaultIndex, comboRef, listboxRef, optionsRef })
 
 	const selectOption = (index) => {
 		setSelectedIndex(index)
+		onChange(children[index].props.value)
 	}
 
 	const onOptionChange = (index) => {

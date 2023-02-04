@@ -10,8 +10,7 @@
 	}
 
 	@media (--above-lg) {
-		max-width: none;
-		min-width: 100%;
+		max-width: 227px;
 	}
 
 	&__combobox {
@@ -23,7 +22,6 @@
 		align-items: center;
 
 		width: 100%;
-		max-width: 173px;
 
 		padding: 7px 8px 7px 16px;
 
@@ -36,71 +34,22 @@
 
 		&:focus {
 			outline: 1px solid var(--color-typo-accent);
-			box-shadow: 0 0 0 1px var(--color-typo-accent);
 			border-radius: 2px;
-		}
-
-		@media (--above-md) {
-			max-width: 176px;
-		}
-
-		@media (--above-lg) {
-			max-width: none;
-			min-width: 100%;
 		}
 	}
 
 	&__listbox {
 		position: absolute;
+		top: calc(100% + 4px);
+
+		border-radius: 2px;
 
 		width: 100%;
-		max-width: 173px;
 
-		@media (--above-md) {
-			max-width: 176px;
-		}
-
-		@media (--above-lg) {
-			max-width: none;
-			min-width: 100%;
-		}
+		overflow: hidden;
 
 		&--hidden {
 			display: none;
-		}
-	}
-
-	&__option {
-		padding-top: 7px;
-		padding-bottom: 7px;
-		padding-left: 48px;
-
-		min-width: 100%;
-
-		font: var(--typo-4);
-		color: var(--color-typo-reverse);
-		text-align: left;
-
-		border: none;
-
-		background-color: var(--color-background-select);
-
-		&:hover {
-			color: var(--color-typo-main);
-
-			background-color: var(--color-background-main)
-		}
-
-		&:focus {
-			outline: 1px solid var(--color-typo-accent);
-			box-shadow: 0 0 0 1px var(--color-typo-accent);
-			border-radius: 2px;
-		}
-
-		&--active {
-			outline: 1px solid var(--color-typo-accent);
-			box-shadow: 0 0 0 1px var(--color-typo-accent);
-			border-radius: 2px;
 		}
 	}
 }
