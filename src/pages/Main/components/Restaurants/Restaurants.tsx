@@ -1,5 +1,5 @@
 import { Container } from '@components'
-import { Restaurant } from '@pages/'
+import { Restaurant } from '@pages/Main/types'
 import Card from '../Card'
 import styles from './Restaurants.module.pcss'
 

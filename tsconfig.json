@@ -17,9 +17,13 @@
     "jsx": "react-jsx",
     "paths": {
       "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
       "@layouts": ["./src/layouts"],
+      "@layouts/*": ["./src/layouts/*"],
       "@pages": ["./src/pages"],
+      "@pages/*": ["./src/pages/*"],
       "@utilities": ["./src/utilities"],
+      "@utilities/*": ["./src/utilities/*"],
     }
   },
   "include": [
