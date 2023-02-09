@@ -5,7 +5,8 @@
         "category": ["Бургеры"],
         "time": {"from": 25, "to": 35},
         "image": "/img/McD.png",
-        "alt": "Макдональдс"
+        "alt": "Макдональдс",
+        "id": 1
     },
     {
         "title": "DimSum & Co — ЦДМ",
@@ -13,7 +14,8 @@
         "category": ["Японская", "Китайская", "Азиатская"],
         "time": {"from": 40, "to": 50},
         "image": "/img/DimSum.png",
-        "alt": "DimSum & Co"
+        "alt": "DimSum & Co",
+        "id": 2
     },
     {
         "title": "ДвижОК — Манежная",
@@ -21,7 +23,8 @@
         "category": ["Американская", "Европейская"],
         "time": {"from": 35, "to": 45},
         "image": "/img/DvizhOK.png",
-        "alt": "ДвижОК"
+        "alt": "ДвижОК",
+        "id": 3
     },
     {
         "title": "НЯ — NHA",
@@ -29,7 +32,8 @@
         "category": ["Вьетнамская"],
         "time": {"from": 30, "to": 40},
         "image": "/img/NHA.png",
-        "alt": "НЯ — NHA"
+        "alt": "НЯ — NHA",
+        "id": 4
     },
     {
         "title": "Точка Дзы — Цветной",
@@ -37,7 +41,8 @@
         "category": ["Вьетнамская"],
         "time": {"from": 40, "to": 50},
         "image": "/img/Point.png",
-        "alt": "Точка Дзы"
+        "alt": "Точка Дзы",
+        "id": 5
     },
     {
         "title": "Cinnabon",
@@ -45,7 +50,8 @@
         "category": ["Выпечка", "Десерты", "Капкейки"],
         "time": {"from": 25, "to": 35},
         "image": "/img/Cinnabon.png",
-        "alt": "Cinnabon"
+        "alt": "Cinnabon",
+        "id": 6
     },
     {
         "title": "PIZZELOVE",
@@ -53,7 +59,8 @@
         "category": ["Пицца"],
         "time": {"from": 15, "to": 25},
         "image": "/img/Pizzelove.png",
-        "alt": "PIZZELOVE"
+        "alt": "PIZZELOVE",
+        "id": 7
     },
     {
         "title": "Zю кафе — Тверская",
@@ -61,7 +68,8 @@
         "category": ["Японская"],
         "time": {"from": 25, "to": 35},
         "image": "/img/Zu.png",
-        "alt": "Zю кафе"
+        "alt": "Zю кафе",
+        "id": 8
     },
     {
         "title": "Bar BQ Cafe — Манежная",
@@ -69,6 +77,7 @@
         "category": ["Европейская"],
         "time": {"from": 30, "to": 40},
         "image": "/img/Barbq.png",
-        "alt": "Bar BQ Cafe"
+        "alt": "Bar BQ Cafe",
+        "id": 9
     }
 ]

@@ -1,28 +1,40 @@
 // @ts-nocheck
+export enum SelectActions {
+	Close,
+	CloseSelect,
+	First,
+	Last,
+	Next,
+	Open,
+	PageDown,
+	PageUp,
+	Previous,
+	Select,
+	Type,
+}
+
 export const isElementInView = (element) => {
-	const bounding = element.getBoundingClientRect();
+	const bounding = element.getBoundingClientRect()
 
 	return (
-		bounding.top >= 0 &&
-		bounding.left >= 0 &&
-		bounding.bottom <=
-			(window.innerHeight || document.documentElement.clientHeight) &&
-		bounding.right <=
-			(window.innerWidth || document.documentElement.clientWidth)
+		bounding.top >= 0
+		&& bounding.left >= 0
+		&& bounding.bottom
+		<= (window.innerHeight || document.documentElement.clientHeight)
+		&& bounding.right
+		<= (window.innerWidth || document.documentElement.clientWidth)
 	)
 }
 
-export const isScrollable = (element) => {
-	return element && element.clientHeight < element.scrollHeight
-}
+export const isScrollable = (element) => element && element.clientHeight < element.scrollHeight
 
 export const maintainScrollVisibility = (activeElement, scrollParent) => {
 	const { offsetHeight, offsetTop } = activeElement
 	const { offsetHeight: parentOffsetHeight, scrollTop } = scrollParent
-  
+
 	const isAbove = offsetTop < scrollTop
 	const isBelow = offsetTop + offsetHeight > scrollTop + parentOffsetHeight
-  
+
 	if (isAbove) {
 		scrollParent.scrollTo(0, offsetTop)
 	} else if (isBelow) {
@@ -32,7 +44,7 @@ export const maintainScrollVisibility = (activeElement, scrollParent) => {
 
 export const getUpdatedIndex = (currentIndex, minIndex, maxIndex, action) => {
 	const pageSize = 10
-  
+
 	switch (action) {
 		case SelectActions.First:
 			return 0
@@ -46,7 +58,7 @@ export const getUpdatedIndex = (currentIndex, minIndex, maxIndex, action) => {
 			return Math.max(minIndex, currentIndex - pageSize)
 		case SelectActions.PageDown:
 			return Math.min(maxIndex, currentIndex + pageSize)
-	  	default:
+		default:
 			return currentIndex
 	}
 }
@@ -54,11 +66,11 @@ export const getUpdatedIndex = (currentIndex, minIndex, maxIndex, action) => {
 export const getActionFromKey = (event, menuOpen) => {
 	const { key, altKey } = event
 	const openKeys = ['ArrowDown', 'ArrowUp', 'Enter', ' ']
-	
+
 	if (!menuOpen && openKeys.includes(key)) {
 		return SelectActions.Open
 	}
-	
+
 	if (key === 'Home') {
 		return SelectActions.First
 	}
@@ -70,32 +82,20 @@ export const getActionFromKey = (event, menuOpen) => {
 	if (menuOpen) {
 		if (key === 'ArrowUp' && altKey) {
 			return SelectActions.CloseSelect
-		} else if (key === 'ArrowDown' && !altKey) {
+		} if (key === 'ArrowDown' && !altKey) {
 			return SelectActions.Next
-		} else if (key === 'ArrowUp') {
+		} if (key === 'ArrowUp') {
 			return SelectActions.Previous
-		} else if (key === 'PageUp') {
+		} if (key === 'PageUp') {
 			return SelectActions.PageUp
-		} else if (key === 'PageDown') {
+		} if (key === 'PageDown') {
 			return SelectActions.PageDown
-		} else if (key === 'Escape') {
+		} if (key === 'Escape') {
 			return SelectActions.Close
-		} else if (key === 'Enter' || key === ' ') {
+		} if (key === 'Enter' || key === ' ') {
 			return SelectActions.CloseSelect
 		}
 	}
-}
 
-export enum SelectActions {
-	Close,
-	CloseSelect,
-	First,
-	Last,
-	Next,
-	Open,
-	PageDown,
-	PageUp,
-	Previous,
-	Select,
-	Type,
+	return undefined
 }

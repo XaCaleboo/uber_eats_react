@@ -1,9 +1,13 @@
-// @ts-nocheck
 import { Container } from '@components'
-import { Card } from '../../components'
+import { Restaurant } from '@pages/'
+import Card from '../Card'
 import styles from './Restaurants.module.pcss'
 
-const Restaurants = ({ items }) => {
+type RestaurantsProps = {
+	items: Restaurant[]
+}
+
+function Restaurants({ items }: RestaurantsProps): JSX.Element {
 	return (
 		<section className={styles.restaurants} aria-label="Рестораны">
 			<Container>
@@ -11,16 +15,15 @@ const Restaurants = ({ items }) => {
 					Рестораны в Москве
 				</h1>
 				<div className={styles.restaurantsContainer}>
-					{items.map((restaurant, index) => (
-						<Card 
-							key={index}
-							title={restaurant.title} 
-							price={restaurant.price} 
-							category={restaurant.category} 
+					{items.map((restaurant: Restaurant) => (
+						<Card
+							key={restaurant.id}
+							title={restaurant.title}
+							price={restaurant.price}
+							category={restaurant.category}
 							time={restaurant.time}
 							image={restaurant.image}
 							alt={restaurant.alt}
-							imageTitle={restaurant.imageTitle} 
 						/>
 					))}
 				</div>

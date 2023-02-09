@@ -1,6 +1,6 @@
 import { Main } from '@pages'
 
-const App = () => {
+function App(): JSX.Element {
 	return (
 		<Main />
 	)

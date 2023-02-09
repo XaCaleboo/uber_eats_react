@@ -18,13 +18,15 @@
     "paths": {
       "@components": ["./src/components"],
       "@layouts": ["./src/layouts"],
-      "@pages": ["./src/pages"]
+      "@pages": ["./src/pages"],
+      "@utilities": ["./src/utilities"],
     }
   },
   "include": [
     "vite.config.ts",
-    ".eslintrc.cjs",
+    ".eslintrc",
     "src",
+    "postcss.config.js",
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

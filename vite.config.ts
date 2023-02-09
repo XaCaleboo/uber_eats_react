@@ -8,14 +8,15 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
-			"@components": path.resolve(__dirname, './src/components'),
-			"@layouts": path.resolve(__dirname, './src/layouts'),
-			"@pages": path.resolve(__dirname, './src/pages'),
-		}
+			'@components': path.resolve(__dirname, './src/components'),
+			'@layouts': path.resolve(__dirname, './src/layouts'),
+			'@pages': path.resolve(__dirname, './src/pages'),
+			'@utilities': path.resolve(__dirname, './src/utilities'),
+		},
 	},
 	css: {
 		modules: {
 			localsConvention: 'camelCaseOnly',
-		}
-	}
+		},
+	},
 })

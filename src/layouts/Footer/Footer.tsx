@@ -1,9 +1,11 @@
-// @ts-nocheck
-import styles from './Footer.module.pcss'
-import { Container, Icon, Select, Option } from '@components'
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react'
+import {
+	Container, Icon, Select, Option,
+} from '@components'
+import styles from './Footer.module.pcss'
 
-const Footer = () => {
+function Footer(): JSX.Element {
 	const [lang, setLang] = useState('ru')
 
 	return (
@@ -11,7 +13,7 @@ const Footer = () => {
 			<Container>
 				<section className={styles.footerSection} aria-label="На главную">
 					<a className={styles.footerLogoLink} href="#" aria-label="На главную">
-						<img className={styles.footerLogo} src="img/white-logo.svg" alt="Логотип" title="UberEats"/>
+						<img className={styles.footerLogo} src="img/white-logo.svg" alt="Логотип" title="UberEats" />
 					</a>
 				</section>
 
@@ -20,16 +22,17 @@ const Footer = () => {
 						<div className={styles.footerColumn}>
 							<section className={styles.footerSocials}>
 								<Select value={lang} onChange={setLang} placeholder="Выберите язык">
-									<Option value='ru' selected>Русский</Option>
-									<Option value='en'>English</Option>
+									<Option value="ru" selected>Русский</Option>
+									<Option value="en">English</Option>
 								</Select>
 								<p className={styles.footerTag}>
-									<span className={styles.footerHashtag}>#</span>UberEats
+									<span className={styles.footerHashtag}>#</span>
+									UberEats
 								</p>
 								<div className={styles.footerSocialsIcons}>
-									<a className={styles.footerSocialsLink} href="#" aria-label="Facebook"><Icon variant='facebook'/></a>
-									<a className={styles.footerSocialsLink} href="#" aria-label="Twitter"><Icon variant='twitter'/></a>
-									<a className={styles.footerSocialsLink} href="#" aria-label="Instagram"><Icon variant='instagram'/></a>
+									<a className={styles.footerSocialsLink} href="#" aria-label="Facebook"><Icon variant="facebook" /></a>
+									<a className={styles.footerSocialsLink} href="#" aria-label="Twitter"><Icon variant="twitter" /></a>
+									<a className={styles.footerSocialsLink} href="#" aria-label="Instagram"><Icon variant="instagram" /></a>
 								</div>
 							</section>
 						</div>
@@ -50,13 +53,13 @@ const Footer = () => {
 				<section className={styles.footerSection} aria-label="Мы в App Store и Google Play">
 					<div className={styles.footerSectionShops}>
 						<a className={styles.footerShops} href="#" aria-label="App store">
-							<img className={styles.footerShopsImage} src="img/app-store.png" alt="App Store" title="App Store"/>
+							<img className={styles.footerShopsImage} src="img/app-store.png" alt="App Store" title="App Store" />
 						</a>
 						<a className={styles.footerShops} href="#" aria-label="Google Play">
-							<img className={styles.footerShopsImage} src="img/google-play.png" alt="Google Play" title="Google Play"/>
+							<img className={styles.footerShopsImage} src="img/google-play.png" alt="Google Play" title="Google Play" />
 						</a>
 					</div>
-            	</section>
+				</section>
 
 				<section className={styles.footerSection} aria-label="Политика компании">
 					<div className={styles.footerSectionTerms}>
@@ -64,7 +67,7 @@ const Footer = () => {
 						<a className={styles.footerTerms} href="#">Обработка персональных данных</a>
 						<a className={styles.footerTerms} href="#">Пользовательское соглашение</a>
 					</div>
-            	</section>
+				</section>
 			</Container>
 		</footer>
 	)

@@ -1,14 +1,13 @@
-// @ts-nocheck
 import { useEffect, useState } from 'react'
 
 import { Header, Footer, ToTop } from '@layouts'
 import { Search, Restaurants } from './components'
 
-const Main = () => {
+function Main(): JSX.Element {
 	const [restaurants, setRestaurants] = useState([])
 
 	useEffect(() => {
-		const controller = new AbortController();
+		const controller = new AbortController()
 
 		fetch('/api/restaurants.json', { signal: controller.signal })
 			.then((response) => response.json())
