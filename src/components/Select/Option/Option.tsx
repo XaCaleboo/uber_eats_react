@@ -1,17 +1,24 @@
-import { ForwardedRef, forwardRef, PropsWithChildren } from 'react'
+import {
+	forwardRef, PropsWithChildren, ButtonHTMLAttributes, MouseEvent,
+} from 'react'
 import cn from 'classnames'
 import styles from './Option.module.pcss'
 
-type OptionProps = {
+type OptionPropsRaw = {
 	isActive?: boolean,
 	isSelected?: boolean,
-	value: string,
-	selected?: boolean
+	selected?: boolean,
+	onClick: (event: MouseEvent<HTMLButtonElement>) => void,
+	onMouseDown: () => void,
 }
 
-const Option = forwardRef(({
-	children, isActive, isSelected, value, selected, ...props
-}: PropsWithChildren<OptionProps>, ref: ForwardedRef<HTMLButtonElement>) => (
+export type OptionProps =
+	PropsWithChildren<OptionPropsRaw> &
+	ButtonHTMLAttributes<HTMLButtonElement>
+
+const Option = forwardRef<HTMLButtonElement, OptionProps>(({
+	children, isActive, isSelected, selected, ...props
+}, ref): JSX.Element => (
 	<button
 		className={cn(styles.option, { [styles.optionActive]: isActive })}
 		role="option"

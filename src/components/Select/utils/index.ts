@@ -1,4 +1,5 @@
-// @ts-nocheck
+import { KeyboardEvent } from 'react'
+
 export enum SelectActions {
 	Close,
 	CloseSelect,
@@ -13,7 +14,7 @@ export enum SelectActions {
 	Type,
 }
 
-export const isElementInView = (element) => {
+export const isElementInView = (element: HTMLButtonElement) => {
 	const bounding = element.getBoundingClientRect()
 
 	return (
@@ -26,9 +27,13 @@ export const isElementInView = (element) => {
 	)
 }
 
-export const isScrollable = (element) => element && element.clientHeight < element.scrollHeight
+export const isScrollable = (element: HTMLDivElement) => element
+	&& element.clientHeight < element.scrollHeight
 
-export const maintainScrollVisibility = (activeElement, scrollParent) => {
+export const maintainScrollVisibility = (
+	activeElement: HTMLButtonElement,
+	scrollParent: HTMLDivElement,
+) => {
 	const { offsetHeight, offsetTop } = activeElement
 	const { offsetHeight: parentOffsetHeight, scrollTop } = scrollParent
 
@@ -42,7 +47,12 @@ export const maintainScrollVisibility = (activeElement, scrollParent) => {
 	}
 }
 
-export const getUpdatedIndex = (currentIndex, minIndex, maxIndex, action) => {
+export const getUpdatedIndex = (
+	currentIndex: number,
+	minIndex: number,
+	maxIndex: number,
+	action: number,
+) => {
 	const pageSize = 10
 
 	switch (action) {
@@ -63,7 +73,7 @@ export const getUpdatedIndex = (currentIndex, minIndex, maxIndex, action) => {
 	}
 }
 
-export const getActionFromKey = (event, menuOpen) => {
+export const getActionFromKey = (event: KeyboardEvent<HTMLButtonElement>, menuOpen: boolean) => {
 	const { key, altKey } = event
 	const openKeys = ['ArrowDown', 'ArrowUp', 'Enter', ' ']
 

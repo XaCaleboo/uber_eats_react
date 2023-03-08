@@ -1,44 +1,60 @@
-// @ts-nocheck
-import { useState, Children } from 'react'
+import {
+	useState, RefObject, MutableRefObject, Dispatch, SetStateAction, KeyboardEvent, MouseEvent,
+} from 'react'
 import {
 	isElementInView, isScrollable, maintainScrollVisibility, getUpdatedIndex, getActionFromKey,
 	SelectActions,
 } from '../utils'
 
+export type OptionItem = {
+	value: string,
+	label: string,
+	selected?: boolean,
+}
+
+type UseSelectProps = {
+	options: OptionItem[],
+	comboRef: RefObject<HTMLButtonElement>,
+	listboxRef: RefObject<HTMLDivElement>,
+	optionsRef: MutableRefObject<HTMLButtonElement[]>,
+	value: string,
+	onChange: Dispatch<SetStateAction<string>>
+}
+
 const useSelect = ({
-	children, comboRef, listboxRef, optionsRef, value, onChange,
-}) => {
+	options, comboRef, listboxRef, optionsRef, value, onChange,
+}: UseSelectProps) => {
 	const minIndex = 0
-	const maxIndex = Children.count(children) - 1
+	const maxIndex = options.length - 1
 
 	const [opened, setOpened] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(minIndex)
 	const [selectedIndex, setSelectedIndex] = useState(() => (
-		children.findIndex((element) => element.props.value === value)
+		options.findIndex((element) => element.value === value)
 	))
 	const [ignoreBlur, setIgnoreBlur] = useState(false)
 
-	const updateMenuState = (newOpenedState, callFocus = true) => {
+	const updateMenuState = (newOpenedState: SetStateAction<boolean>, callFocus = true) => {
 		setOpened(newOpenedState)
 
-		if (!newOpenedState && !isElementInView(comboRef.current)) {
+		if (!newOpenedState && comboRef.current !== null && !isElementInView(comboRef.current)) {
 			comboRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
 		}
 
-		if (callFocus) {
+		if (callFocus && comboRef.current !== null) {
 			comboRef.current.focus()
 		}
 	}
 
-	const selectOption = (index) => {
+	const selectOption = (index: number) => {
 		setSelectedIndex(index)
-		onChange(children[index].props.value)
+		onChange(options[index].value)
 	}
 
-	const onOptionChange = (index) => {
+	const onOptionChange = (index: number) => {
 		setActiveIndex(index)
 
-		if (isScrollable(listboxRef.current)) {
+		if (listboxRef.current !== null && isScrollable(listboxRef.current)) {
 			maintainScrollVisibility(optionsRef.current[index], listboxRef.current)
 		}
 
@@ -63,7 +79,7 @@ const useSelect = ({
 		updateMenuState(!opened, false)
 	}
 
-	const onComboKeyDown = (event) => {
+	const onComboKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
 		const action = getActionFromKey(event, opened)
 
 		switch (action) {
@@ -95,7 +111,7 @@ const useSelect = ({
 		return undefined
 	}
 
-	const onOptionClick = (index) => (event) => {
+	const onOptionClick = (index: number) => (event: MouseEvent<HTMLButtonElement>) => {
 		event.stopPropagation()
 
 		onOptionChange(index)

@@ -1,18 +1,39 @@
 import {
-	useState, useRef, Children, cloneElement,
+	useState,
+	useRef,
+	Dispatch,
+	SetStateAction,
+	ForwardRefExoticComponent,
+	RefAttributes,
+	ButtonHTMLAttributes,
+	PropsWithChildren,
 } from 'react'
+// import ReactIs from 'react-is' // Delete this library
 import cn from 'classnames'
 import uuid from 'react-uuid'
 import { Icon } from '@components'
-import { useSelect } from './hooks'
+import OptionComponent, { OptionProps } from './Option'
+import { useSelect, OptionItem } from './hooks'
 import styles from './Select.module.pcss'
 
+type SelectProps = {
+	options: OptionItem[],
+	getOptionComponent: ForwardRefExoticComponent<
+	PropsWithChildren<OptionProps> & // make indents - search for plugin
+	RefAttributes<HTMLButtonElement> &
+	ButtonHTMLAttributes<HTMLButtonElement>
+	>,
+	value: string,
+	onChange: Dispatch<SetStateAction<string>>,
+	placeholder: string,
+}
+
 function Select({
-	children, value, onChange, placeholder,
-}) {
-	const comboRef = useRef(null)
-	const listboxRef = useRef(null)
-	const optionsRef = useRef([])
+	value = 'ru', onChange, placeholder, options = [], getOptionComponent = OptionComponent,
+}: SelectProps): JSX.Element {
+	const comboRef = useRef<HTMLButtonElement>(null)
+	const listboxRef = useRef<HTMLDivElement>(null)
+	const optionsRef = useRef<HTMLButtonElement[]>([])
 
 	const {
 		opened,
@@ -24,10 +45,12 @@ function Select({
 		onOptionClick,
 		onOptionMouseDown,
 	} = useSelect({
-		children, comboRef, listboxRef, optionsRef, value, onChange,
+		options, comboRef, listboxRef, optionsRef, value, onChange,
 	})
 
 	const [idBase] = useState(uuid())
+
+	const Option = getOptionComponent
 
 	return (
 		<div className={styles.select}>
@@ -40,14 +63,14 @@ function Select({
 				aria-activedescendant={opened ? `${idBase}-${activeIndex}` : ''}
 				role="combobox"
 				ref={comboRef}
-				tabIndex="0"
+				tabIndex={0}
 				onBlur={onComboBlur}
 				onClick={onComboClick}
 				onKeyDown={onComboKeyDown}
 				type="button"
 			>
 				<Icon variant="world" />
-				{children[selectedIndex]?.props?.children ?? placeholder}
+				{ options[selectedIndex].label ?? placeholder }
 				<Icon variant="dropdown" />
 			</button>
 			<div
@@ -55,19 +78,20 @@ function Select({
 				id={`${idBase}-listbox`}
 				role="listbox"
 				ref={listboxRef}
-				tabIndex="-1"
+				tabIndex={-1}
 			>
-				{Children
-					.toArray(children)
-					.filter((element) => element.type.displayName === 'Option')
-					.map((child, index) => cloneElement(child, {
-						isActive: activeIndex === index,
-						id: `${idBase}-${index}`,
-						ref: (element) => optionsRef.current.push(element),
-						isSelected: selectedIndex === index,
-						onClick: onOptionClick(index),
-						onMouseDown: onOptionMouseDown,
-					}))}
+				{options.map((item, index) => (
+					<Option
+						isActive={activeIndex === index}
+						id={`${idBase}-${index}`}
+						ref={(element: never) => optionsRef.current.push(element)}
+						isSelected={selectedIndex === index}
+						onClick={onOptionClick(index)}
+						onMouseDown={onOptionMouseDown}
+					>
+						{item.label}
+					</Option>
+				))}
 			</div>
 		</div>
 	)

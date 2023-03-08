@@ -21,10 +21,23 @@ function Footer(): JSX.Element {
 					<div className={styles.footerNavigation}>
 						<div className={styles.footerColumn}>
 							<section className={styles.footerSocials}>
-								<Select value={lang} onChange={setLang} placeholder="Выберите язык">
-									<Option value="ru" selected>Русский</Option>
-									<Option value="en">English</Option>
-								</Select>
+								<Select
+									options={[
+										{
+											value: 'ru',
+											label: 'Русский',
+											selected: true,
+										},
+										{
+											value: 'en',
+											label: 'English',
+										},
+									]}
+									getOptionComponent={Option}
+									value={lang}
+									onChange={setLang}
+									placeholder="Выберите язык"
+								/>
 								<p className={styles.footerTag}>
 									<span className={styles.footerHashtag}>#</span>
 									UberEats
