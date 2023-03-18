@@ -1,83 +1,83 @@
 [
-    {
-        "title": "Макдоналдс - Газетный",
-        "price": "medium",
-        "category": ["Бургеры"],
-        "time": {"from": 25, "to": 35},
-        "image": "/img/McD.png",
-        "alt": "Макдональдс",
-        "id": 1
-    },
-    {
-        "title": "DimSum & Co — ЦДМ",
-        "price": "low",
-        "category": ["Японская", "Китайская", "Азиатская"],
-        "time": {"from": 40, "to": 50},
-        "image": "/img/DimSum.png",
-        "alt": "DimSum & Co",
-        "id": 2
-    },
-    {
-        "title": "ДвижОК — Манежная",
-        "price": "low",
-        "category": ["Американская", "Европейская"],
-        "time": {"from": 35, "to": 45},
-        "image": "/img/DvizhOK.png",
-        "alt": "ДвижОК",
-        "id": 3
-    },
-    {
-        "title": "НЯ — NHA",
-        "price": "medium",
-        "category": ["Вьетнамская"],
-        "time": {"from": 30, "to": 40},
-        "image": "/img/NHA.png",
-        "alt": "НЯ — NHA",
-        "id": 4
-    },
-    {
-        "title": "Точка Дзы — Цветной",
-        "price": "medium",
-        "category": ["Вьетнамская"],
-        "time": {"from": 40, "to": 50},
-        "image": "/img/Point.png",
-        "alt": "Точка Дзы",
-        "id": 5
-    },
-    {
-        "title": "Cinnabon",
-        "price": "low",
-        "category": ["Выпечка", "Десерты", "Капкейки"],
-        "time": {"from": 25, "to": 35},
-        "image": "/img/Cinnabon.png",
-        "alt": "Cinnabon",
-        "id": 6
-    },
-    {
-        "title": "PIZZELOVE",
-        "price": "medium",
-        "category": ["Пицца"],
-        "time": {"from": 15, "to": 25},
-        "image": "/img/Pizzelove.png",
-        "alt": "PIZZELOVE",
-        "id": 7
-    },
-    {
-        "title": "Zю кафе — Тверская",
-        "price": "medium",
-        "category": ["Японская"],
-        "time": {"from": 25, "to": 35},
-        "image": "/img/Zu.png",
-        "alt": "Zю кафе",
-        "id": 8
-    },
-    {
-        "title": "Bar BQ Cafe — Манежная",
-        "price": "high",
-        "category": ["Европейская"],
-        "time": {"from": 30, "to": 40},
-        "image": "/img/Barbq.png",
-        "alt": "Bar BQ Cafe",
-        "id": 9
-    }
+  {
+    "title": "Макдоналдс - Газетный",
+    "price": "medium",
+    "category": ["Бургеры"],
+    "time": {"from": 25, "to": 35},
+    "image": "/img/McD.png",
+    "alt": "Макдональдс",
+    "id": 1
+  },
+  {
+    "title": "DimSum & Co — ЦДМ",
+    "price": "low",
+    "category": ["Японская", "Китайская", "Азиатская"],
+    "time": {"from": 40, "to": 50},
+    "image": "/img/DimSum.png",
+    "alt": "DimSum & Co",
+    "id": 2
+  },
+  {
+    "title": "ДвижОК — Манежная",
+    "price": "low",
+    "category": ["Американская", "Европейская"],
+    "time": {"from": 35, "to": 45},
+    "image": "/img/DvizhOK.png",
+    "alt": "ДвижОК",
+    "id": 3
+  },
+  {
+    "title": "НЯ — NHA",
+    "price": "medium",
+    "category": ["Вьетнамская"],
+    "time": {"from": 30, "to": 40},
+    "image": "/img/NHA.png",
+    "alt": "НЯ — NHA",
+    "id": 4
+  },
+  {
+    "title": "Точка Дзы — Цветной",
+    "price": "medium",
+    "category": ["Вьетнамская"],
+    "time": {"from": 40, "to": 50},
+    "image": "/img/Point.png",
+    "alt": "Точка Дзы",
+    "id": 5
+  },
+  {
+    "title": "Cinnabon",
+    "price": "low",
+    "category": ["Выпечка", "Десерты", "Капкейки"],
+    "time": {"from": 25, "to": 35},
+    "image": "/img/Cinnabon.png",
+    "alt": "Cinnabon",
+    "id": 6
+  },
+  {
+    "title": "PIZZELOVE",
+    "price": "medium",
+    "category": ["Пицца"],
+    "time": {"from": 15, "to": 25},
+    "image": "/img/Pizzelove.png",
+    "alt": "PIZZELOVE",
+    "id": 7
+  },
+  {
+    "title": "Zю кафе — Тверская",
+    "price": "medium",
+    "category": ["Японская"],
+    "time": {"from": 25, "to": 35},
+    "image": "/img/Zu.png",
+    "alt": "Zю кафе",
+    "id": 8
+  },
+  {
+    "title": "Bar BQ Cafe — Манежная",
+    "price": "high",
+    "category": ["Европейская"],
+    "time": {"from": 30, "to": 40},
+    "image": "/img/Barbq.png",
+    "alt": "Bar BQ Cafe",
+    "id": 9
+  }
 ]

@@ -9,7 +9,6 @@ import {
 export type OptionItem = {
 	value: string,
 	label: string,
-	selected?: boolean,
 }
 
 type UseSelectProps = {
@@ -17,8 +16,8 @@ type UseSelectProps = {
 	comboRef: RefObject<HTMLButtonElement>,
 	listboxRef: RefObject<HTMLDivElement>,
 	optionsRef: MutableRefObject<HTMLButtonElement[]>,
-	value: string,
-	onChange: Dispatch<SetStateAction<string>>
+	value?: string,
+	onChange: Dispatch<SetStateAction<string | undefined>>
 }
 
 const useSelect = ({

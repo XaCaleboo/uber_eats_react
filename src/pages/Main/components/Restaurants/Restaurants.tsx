@@ -18,6 +18,7 @@ function Restaurants({ items }: RestaurantsProps): JSX.Element {
 					{items.map((restaurant: Restaurant) => (
 						<Card
 							key={restaurant.id}
+							id={restaurant.id}
 							title={restaurant.title}
 							price={restaurant.price}
 							category={restaurant.category}

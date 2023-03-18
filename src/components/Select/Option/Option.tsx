@@ -1,13 +1,12 @@
 import {
 	forwardRef, PropsWithChildren, ButtonHTMLAttributes, MouseEvent,
 } from 'react'
-import cn from 'classnames'
+import clsx from 'clsx'
 import styles from './Option.module.pcss'
 
 type OptionPropsRaw = {
 	isActive?: boolean,
 	isSelected?: boolean,
-	selected?: boolean,
 	onClick: (event: MouseEvent<HTMLButtonElement>) => void,
 	onMouseDown: () => void,
 }
@@ -17,10 +16,10 @@ export type OptionProps =
 	ButtonHTMLAttributes<HTMLButtonElement>
 
 const Option = forwardRef<HTMLButtonElement, OptionProps>(({
-	children, isActive, isSelected, selected, ...props
+	children, isActive, isSelected, ...props
 }, ref): JSX.Element => (
 	<button
-		className={cn(styles.option, { [styles.optionActive]: isActive })}
+		className={clsx(styles.option, { [styles.optionActive]: isActive })}
 		role="option"
 		aria-selected={isSelected}
 		ref={ref}
@@ -35,7 +34,6 @@ Option.defaultProps = {
 	children: undefined,
 	isActive: false,
 	isSelected: false,
-	selected: false,
 }
 
 Option.displayName = 'Option'

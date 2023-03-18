@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import cn from 'classnames'
+import clsx from 'clsx'
 import styles from './Container.module.pcss'
 
 type ContainerProps = {
@@ -11,7 +11,7 @@ function Container({
 }: PropsWithChildren<ContainerProps>): JSX.Element {
 	return (
 		<div
-			className={cn(styles.container, className)}
+			className={clsx(styles.container, className)}
 			{...props}
 		>
 			{children}

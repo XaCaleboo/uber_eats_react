@@ -6,7 +6,7 @@ import {
 import styles from './Footer.module.pcss'
 
 function Footer(): JSX.Element {
-	const [lang, setLang] = useState('ru')
+	const [lang, setLang] = useState<string | undefined>('ru')
 
 	return (
 		<footer className={styles.footer}>
@@ -26,7 +26,6 @@ function Footer(): JSX.Element {
 										{
 											value: 'ru',
 											label: 'Русский',
-											selected: true,
 										},
 										{
 											value: 'en',

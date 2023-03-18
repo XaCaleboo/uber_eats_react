@@ -8,8 +8,7 @@ import {
 	ButtonHTMLAttributes,
 	PropsWithChildren,
 } from 'react'
-// import ReactIs from 'react-is' // Delete this library
-import cn from 'classnames'
+import clsx from 'clsx'
 import uuid from 'react-uuid'
 import { Icon } from '@components'
 import OptionComponent, { OptionProps } from './Option'
@@ -23,13 +22,13 @@ type SelectProps = {
 	RefAttributes<HTMLButtonElement> &
 	ButtonHTMLAttributes<HTMLButtonElement>
 	>,
-	value: string,
-	onChange: Dispatch<SetStateAction<string>>,
+	value?: string,
+	onChange: Dispatch<SetStateAction<string | undefined>>,
 	placeholder: string,
 }
 
 function Select({
-	value = 'ru', onChange, placeholder, options = [], getOptionComponent = OptionComponent,
+	value = undefined, onChange, placeholder, options = [], getOptionComponent = OptionComponent,
 }: SelectProps): JSX.Element {
 	const comboRef = useRef<HTMLButtonElement>(null)
 	const listboxRef = useRef<HTMLDivElement>(null)
@@ -70,11 +69,11 @@ function Select({
 				type="button"
 			>
 				<Icon variant="world" />
-				{ options[selectedIndex].label ?? placeholder }
+				{ options[selectedIndex]?.label ?? placeholder }
 				<Icon variant="dropdown" />
 			</button>
 			<div
-				className={cn(styles.selectListbox, { [styles.selectListboxHidden]: !opened })}
+				className={clsx(styles.selectListbox, { [styles.selectListboxHidden]: !opened })}
 				id={`${idBase}-listbox`}
 				role="listbox"
 				ref={listboxRef}

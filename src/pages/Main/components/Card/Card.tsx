@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { PropsWithChildren } from 'react'
+import { Link } from 'wouter'
 import styles from './Card.module.pcss'
 import { RestaurantPrice } from '../../types'
 
@@ -24,6 +25,7 @@ const RestaurantPriceRubbles: RestaurantPriceRubblesType = {
 }
 
 type CardProps = {
+	id: number,
 	title: string,
 	price: string,
 	category: string[],
@@ -36,24 +38,24 @@ type CardProps = {
 }
 
 function Card({
-	title, price, category, time, image, alt,
+	id, title, price, category, time, image, alt,
 }: PropsWithChildren<CardProps>): JSX.Element {
 	return (
 		<section>
-			<a className={styles.card} href="#">
+			<Link href={`/restaurant/${id}`} className={styles.card}>
 				<header className={styles.cardDescription}>
 					<h2 className={styles.cardTitle}>{title}</h2>
 					<p className={styles.cardPrice}>
 						<span className="visually-hidden">{RestaurantPriceCategories[price]}</span>
 						<span aria-hidden="true">{RestaurantPriceRubbles[price]}</span>
-						` • `
+						{' • '}
 						{category.join(' • ')}
 					</p>
 					<p className={styles.cardTime}>
 						{time.from}
-						` - `
+						{' - '}
 						{time.to}
-						` мин`
+						{' мин'}
 					</p>
 				</header>
 				<img
@@ -62,7 +64,7 @@ function Card({
 					alt={alt}
 					title={alt}
 				/>
-			</a>
+			</Link>
 		</section>
 	)
 }

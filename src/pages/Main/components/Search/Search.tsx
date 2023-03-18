@@ -1,5 +1,4 @@
 import { Container } from '@components'
-
 import styles from './Search.module.pcss'
 
 function Search(): JSX.Element {

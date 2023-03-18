@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 
-import { Header, Footer, ToTop } from '@layouts'
 import { Search, Restaurants } from './components'
 
 function Main(): JSX.Element {
@@ -20,11 +19,8 @@ function Main(): JSX.Element {
 
 	return (
 		<>
-			<Header />
 			<Search />
 			<Restaurants items={restaurants} />
-			<Footer />
-			<ToTop />
 		</>
 	)
 }

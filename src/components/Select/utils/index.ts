@@ -14,7 +14,7 @@ export enum SelectActions {
 	Type,
 }
 
-export const isElementInView = (element: HTMLButtonElement) => {
+export const isElementInView = (element: HTMLElement) => {
 	const bounding = element.getBoundingClientRect()
 
 	return (
@@ -27,12 +27,12 @@ export const isElementInView = (element: HTMLButtonElement) => {
 	)
 }
 
-export const isScrollable = (element: HTMLDivElement) => element
+export const isScrollable = (element: HTMLElement) => element
 	&& element.clientHeight < element.scrollHeight
 
 export const maintainScrollVisibility = (
-	activeElement: HTMLButtonElement,
-	scrollParent: HTMLDivElement,
+	activeElement: HTMLElement,
+	scrollParent: HTMLElement,
 ) => {
 	const { offsetHeight, offsetTop } = activeElement
 	const { offsetHeight: parentOffsetHeight, scrollTop } = scrollParent

@@ -1,5 +1,5 @@
 import { PropsWithChildren, ComponentPropsWithoutRef, ElementType } from 'react'
-import cn from 'classnames'
+import clsx from 'clsx'
 import styles from './Button.module.pcss'
 
 type ButtonProps<T extends ElementType> = {
@@ -27,7 +27,7 @@ function Button<T extends ElementType = 'button'>({
 
 	return (
 		<Tag
-			className={cn(
+			className={clsx(
 				styles.button,
 				{ [styles.buttonDefault]: variant === 'default' },
 				{ [styles.buttonOutlined]: variant === 'outlined' },

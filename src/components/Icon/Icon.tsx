@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import clsx from 'clsx'
 import styles from './Icon.module.pcss'
 
 type IconProps = {
@@ -11,7 +11,7 @@ function Icon({
 }: IconProps): JSX.Element {
 	return (
 		<span
-			className={cn(
+			className={clsx(
 				styles.icon,
 				{ [styles.iconBasket]: variant === 'basket' },
 				{ [styles.iconFacebook]: variant === 'facebook' },
