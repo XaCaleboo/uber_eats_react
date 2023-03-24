@@ -1,7 +1,27 @@
 .container {
-    max-width: 956px;
-    margin: 0 auto;
+	box-sizing: border-box;
 
-    padding-left: 8px;
-    padding-right: 8px;
+    width: 100%;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	padding-right: 8px;
+	padding-left: 8px;
+
+	@media (--above-sm) {
+		width: 560px;
+	}
+
+	@media (--above-md) {
+		width: 752px;
+	}
+
+	@media (--above-lg) {
+		width: 976px;
+	}
+
+	@media (--above-xl) {
+		width: 1184px;
+	}
 }

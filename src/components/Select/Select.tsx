@@ -81,6 +81,8 @@ function Select({
 			>
 				{options.map((item, index) => (
 					<Option
+						// eslint-disable-next-line react/no-array-index-key
+						key={index}
 						isActive={activeIndex === index}
 						id={`${idBase}-${index}`}
 						ref={(element: never) => optionsRef.current.push(element)}

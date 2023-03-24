@@ -5,7 +5,7 @@ function Jumbotron(): JSX.Element {
 	return (
 		<section className={styles.jumbotron}>
 			<img className={styles.jumbotronImage} src="/img/jumbotron.png" alt="Трактир Пушкин" />
-			<Container>
+			<Container className={styles.jumbotronContainer}>
 				<div className={styles.jumbotronCard}>
 					<h1 className={styles.jumbotronHeading}>Трактир «Пушкин»</h1>
 					<div className={styles.jumbotronDescription}>

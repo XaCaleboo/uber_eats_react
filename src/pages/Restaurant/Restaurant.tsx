@@ -1,8 +1,11 @@
-import { Jumbotron } from './components'
+import { Jumbotron, Menu } from './components'
 
 function Restaurant(): JSX.Element {
 	return (
-		<Jumbotron />
+		<>
+			<Jumbotron />
+			<Menu />
+		</>
 	)
 }
 

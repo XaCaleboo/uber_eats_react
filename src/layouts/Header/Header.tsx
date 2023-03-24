@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-alert */
 import { Button, Container, Icon } from '@components'
 import { Link } from 'wouter'
