@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react'
+import { Link } from 'wouter'
 import {
 	Container, Icon, Select, Option,
 } from '@components'
@@ -12,9 +13,9 @@ function Footer(): JSX.Element {
 		<footer className={styles.footer}>
 			<Container>
 				<section className={styles.footerSection} aria-label="На главную">
-					<a className={styles.footerLogoLink} href="#" aria-label="На главную">
-						<img className={styles.footerLogo} src="img/white-logo.svg" alt="Логотип" title="UberEats" />
-					</a>
+					<Link className={styles.footerLogoLink} href="/" aria-label="На главную">
+						<img className={styles.footerLogo} src="/img/white-logo.svg" alt="Логотип" title="UberEats" />
+					</Link>
 				</section>
 
 				<section className={styles.footerSection} aria-label="Язык и навигация">
@@ -65,10 +66,10 @@ function Footer(): JSX.Element {
 				<section className={styles.footerSection} aria-label="Мы в App Store и Google Play">
 					<div className={styles.footerSectionShops}>
 						<a className={styles.footerShops} href="#" aria-label="App store">
-							<img className={styles.footerShopsImage} src="img/app-store.png" alt="App Store" title="App Store" />
+							<img className={styles.footerShopsImage} src="/img/app-store.png" alt="App Store" title="App Store" />
 						</a>
 						<a className={styles.footerShops} href="#" aria-label="Google Play">
-							<img className={styles.footerShopsImage} src="img/google-play.png" alt="Google Play" title="Google Play" />
+							<img className={styles.footerShopsImage} src="/img/google-play.png" alt="Google Play" title="Google Play" />
 						</a>
 					</div>
 				</section>
