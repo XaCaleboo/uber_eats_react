@@ -63,12 +63,12 @@
     "id": 7
   },
   {
-    "title": "Zю кафе — Тверская",
+    "title": "Lu кафе — Тверская",
     "price": "medium",
     "category": ["Японская"],
     "time": {"from": 25, "to": 35},
-    "image": "/img/Zu.png",
-    "alt": "Zю кафе",
+    "image": "/img/Lu.png",
+    "alt": "Lu кафе",
     "id": 8
   },
   {

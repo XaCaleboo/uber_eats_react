@@ -1,9 +1,7 @@
-.search-block {
-    padding-top: 56px;
-    padding-bottom: 30px;
-}
-
 .search {
+	padding-top: 56px;
+    padding-bottom: 30px;
+
     &__input {
         width: 100%;
         padding: 0;
@@ -12,14 +10,22 @@
         border: none;
         border-bottom: 1px solid var(--color-typo-secondary);
 
-        line-height: 24px;
+        font: var(--typo-h3);
+		line-height: 24px;
         color: var(--color-typo-secondary);
 
         opacity: 0.5;
 
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+    	}
+
         &::placeholder {
             font: var(--typo-h3);
-    
+
             color: var(--color-typo-secondary);
             opacity: 1;
         }

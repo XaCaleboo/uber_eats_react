@@ -1,39 +1,268 @@
-[
-  {
-    "id": 1,
-    "title": "Сельдь на бородинском хлебе",
-    "addition": "С яйцом и огурцом",
-    "price": 240,
-    "img": "/img/herring.png"
-  },
-  {
-    "id": 2,
-    "title": "Соленья ассорти",
-    "price": 320,
-    "img": "/img/pickles.png"
-  },
-  {
-    "id": 3,
-    "title": "Грибы маринованные",
-    "price": 300,
-    "img": "/img/mushroom.png"
-  },
-  {
-    "id": 4,
-    "title": "Сало домашнее с горчицей",
-    "price": 320,
-    "img": "/img/fat.png"
-  },
-  {
-    "id": 5,
-    "title": "Малосольная семга",
-    "price": 390,
-    "img": "/img/salmon.png"
-  },
-  {
-    "id": 6,
-    "title": "Язык говяжий с хреном",
-    "price": 350,
-    "img": "/img/tongue.png"
-  }
-]
+{
+  "title": "PIZZELOVE",
+  "price": "medium",
+  "category": ["Пицца"],
+  "time": {"from": 15, "to": 25},
+  "image": "/img/Pizzelove.png",
+  "alt": "PIZZELOVE",
+  "dishesTypes": [
+    {
+      "id": 1,
+      "title": "Закуски",
+      "dishes": [
+        {
+          "id": 1,
+          "title": "Сельдь на бородинском хлебе",
+          "addition": "С яйцом и огурцом",
+          "price": 240,
+          "img": "/img/herring.png"
+        },
+        {
+          "id": 2,
+          "title": "Соленья ассорти",
+          "price": 320,
+          "img": "/img/pickles.png"
+        },
+        {
+          "id": 3,
+          "title": "Грибы маринованные",
+          "price": 300,
+          "img": "/img/mushroom.png"
+        },
+        {
+          "id": 4,
+          "title": "Сало домашнее с горчицей",
+          "price": 320,
+          "img": "/img/fat.png"
+        },
+        {
+          "id": 5,
+          "title": "Малосольная семга",
+          "price": 390,
+          "img": "/img/salmon.png"
+        },
+        {
+          "id": 6,
+          "title": "Язык говяжий с хреном",
+          "price": 350,
+          "img": "/img/tongue.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Салаты",
+      "dishes": [
+        {
+          "id": 1,
+          "title": "Сельдь на бородинском хлебе",
+          "addition": "С яйцом и огурцом",
+          "price": 240,
+          "img": "/img/herring.png"
+        },
+        {
+          "id": 2,
+          "title": "Соленья ассорти",
+          "price": 320,
+          "img": "/img/pickles.png"
+        },
+        {
+          "id": 3,
+          "title": "Грибы маринованные",
+          "price": 300,
+          "img": "/img/mushroom.png"
+        },
+        {
+          "id": 4,
+          "title": "Сало домашнее с горчицей",
+          "price": 320,
+          "img": "/img/fat.png"
+        },
+        {
+          "id": 5,
+          "title": "Малосольная семга",
+          "price": 390,
+          "img": "/img/salmon.png"
+        },
+        {
+          "id": 6,
+          "title": "Язык говяжий с хреном",
+          "price": 350,
+          "img": "/img/tongue.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Супы",
+      "dishes": [
+        {
+          "id": 1,
+          "title": "Сельдь на бородинском хлебе",
+          "addition": "С яйцом и огурцом",
+          "price": 240,
+          "img": "/img/herring.png"
+        },
+        {
+          "id": 2,
+          "title": "Соленья ассорти",
+          "price": 320,
+          "img": "/img/pickles.png"
+        },
+        {
+          "id": 3,
+          "title": "Грибы маринованные",
+          "price": 300,
+          "img": "/img/mushroom.png"
+        },
+        {
+          "id": 4,
+          "title": "Сало домашнее с горчицей",
+          "price": 320,
+          "img": "/img/fat.png"
+        },
+        {
+          "id": 5,
+          "title": "Малосольная семга",
+          "price": 390,
+          "img": "/img/salmon.png"
+        },
+        {
+          "id": 6,
+          "title": "Язык говяжий с хреном",
+          "price": 350,
+          "img": "/img/tongue.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Горячие блюда",
+      "dishes": [
+        {
+          "id": 1,
+          "title": "Сельдь на бородинском хлебе",
+          "addition": "С яйцом и огурцом",
+          "price": 240,
+          "img": "/img/herring.png"
+        },
+        {
+          "id": 2,
+          "title": "Соленья ассорти",
+          "price": 320,
+          "img": "/img/pickles.png"
+        },
+        {
+          "id": 3,
+          "title": "Грибы маринованные",
+          "price": 300,
+          "img": "/img/mushroom.png"
+        },
+        {
+          "id": 4,
+          "title": "Сало домашнее с горчицей",
+          "price": 320,
+          "img": "/img/fat.png"
+        },
+        {
+          "id": 5,
+          "title": "Малосольная семга",
+          "price": 390,
+          "img": "/img/salmon.png"
+        },
+        {
+          "id": 6,
+          "title": "Язык говяжий с хреном",
+          "price": 350,
+          "img": "/img/tongue.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Гарниры",
+      "dishes": [
+        {
+          "id": 1,
+          "title": "Сельдь на бородинском хлебе",
+          "addition": "С яйцом и огурцом",
+          "price": 240,
+          "img": "/img/herring.png"
+        },
+        {
+          "id": 2,
+          "title": "Соленья ассорти",
+          "price": 320,
+          "img": "/img/pickles.png"
+        },
+        {
+          "id": 3,
+          "title": "Грибы маринованные",
+          "price": 300,
+          "img": "/img/mushroom.png"
+        },
+        {
+          "id": 4,
+          "title": "Сало домашнее с горчицей",
+          "price": 320,
+          "img": "/img/fat.png"
+        },
+        {
+          "id": 5,
+          "title": "Малосольная семга",
+          "price": 390,
+          "img": "/img/salmon.png"
+        },
+        {
+          "id": 6,
+          "title": "Язык говяжий с хреном",
+          "price": 350,
+          "img": "/img/tongue.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Десерты",
+      "dishes": [
+        {
+          "id": 1,
+          "title": "Сельдь на бородинском хлебе",
+          "addition": "С яйцом и огурцом",
+          "price": 240,
+          "img": "/img/herring.png"
+        },
+        {
+          "id": 2,
+          "title": "Соленья ассорти",
+          "price": 320,
+          "img": "/img/pickles.png"
+        },
+        {
+          "id": 3,
+          "title": "Грибы маринованные",
+          "price": 300,
+          "img": "/img/mushroom.png"
+        },
+        {
+          "id": 4,
+          "title": "Сало домашнее с горчицей",
+          "price": 320,
+          "img": "/img/fat.png"
+        },
+        {
+          "id": 5,
+          "title": "Малосольная семга",
+          "price": 390,
+          "img": "/img/salmon.png"
+        },
+        {
+          "id": 6,
+          "title": "Язык говяжий с хреном",
+          "price": 350,
+          "img": "/img/tongue.png"
+        }
+      ]
+    }
+  ]
+}

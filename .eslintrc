@@ -37,17 +37,4 @@
     }],
     "no-tabs": ["error", { "allowIndentationTabs": true }]
   }
-  // "settings": {
-  //   "import/resolver": {
-  //     "alias": [
-  //       ["@components", "./src/components"],
-  //       ["@blocks", "./src/blocks"],
-  //       ["@layouts", "./src/layouts"],
-  //       ["@pages", "./src/pages"],
-  //       ["@styles", "./src/styles"],
-  //       ["@images", "./src/images"],
-  //       ["@store", "./src/store"]
-  //     ]
-  //   }
-  // }
 }

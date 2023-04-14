@@ -9,7 +9,7 @@ type RestaurantsProps = {
 
 function Restaurants({ items }: RestaurantsProps): JSX.Element {
 	return (
-		<section className={styles.restaurants} aria-label="Рестораны">
+		<section className={styles.restaurants}>
 			<Container>
 				<h1 className={styles.restaurantsHeading}>
 					Рестораны в Москве

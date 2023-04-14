@@ -3,14 +3,14 @@ import { RouteComponentProps, DefaultParams } from 'wouter'
 import { Jumbotron, Menu, Dishes } from './components'
 
 function Restaurant({ params }: RouteComponentProps<DefaultParams>): JSX.Element {
-	const [positions, setPositions] = useState([])
+	const [restaurant, setRestaurant] = useState()
 
 	useEffect(() => {
 		const controller = new AbortController()
 
 		fetch(`/api/restaurants/${params.id}.json`, { signal: controller.signal })
 			.then((response) => response.json())
-			.then((data) => setPositions(data))
+			.then((data) => setRestaurant(data))
 
 		return () => {
 			controller.abort()
@@ -19,9 +19,9 @@ function Restaurant({ params }: RouteComponentProps<DefaultParams>): JSX.Element
 
 	return (
 		<>
-			<Jumbotron />
-			<Menu />
-			<Dishes items={positions} />
+			<Jumbotron items={restaurant} />
+			<Menu items={restaurant} />
+			<Dishes items={restaurant} />
 		</>
 	)
 }

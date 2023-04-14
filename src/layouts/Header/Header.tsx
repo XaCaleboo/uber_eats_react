@@ -8,13 +8,15 @@ function Header(): JSX.Element {
 		<header className={styles.header}>
 			<Container>
 				<div className={styles.headerContainer}>
-					<Link className={styles.headerLink} href="/" aria-label="На главную">
-						<img
-							className={styles.headerLogo}
-							src="/img/logo.svg"
-							alt="UberEats"
-							title="UberEats"
-						/>
+					<Link href="/">
+						<a className={styles.headerLink} href="/" aria-label="На главную">
+							<img
+								className={styles.headerLogo}
+								src="/img/logo.svg"
+								alt="UberEats"
+								title="UberEats"
+							/>
+						</a>
 					</Link>
 					<div className={styles.headerNavigation}>
 						<Button variant="outlined" onClick={() => alert('Hello')}>Войти</Button>
