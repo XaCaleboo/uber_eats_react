@@ -47,7 +47,7 @@ function Select({
 		options, comboRef, listboxRef, optionsRef, value, onChange,
 	})
 
-	const [idBase] = useState(uuid())
+	const [idBase] = useState<string>(uuid())
 
 	const Option = getOptionComponent
 

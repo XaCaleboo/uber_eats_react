@@ -1,9 +1,13 @@
 import { Container } from '@components'
-import type { CategoriesProps, Positions } from '@pages/Restaurant/types'
+import type { RestaurantInfo, Positions } from '@pages/Restaurant/types'
 import styles from './Dishes.module.pcss'
 import Position from '../Position'
 
-function Dishes({ items }: CategoriesProps): JSX.Element | null {
+type DishesProps = {
+	items?: RestaurantInfo
+}
+
+function Dishes({ items = undefined }: DishesProps): JSX.Element | null {
 	if (!items) return null
 
 	return (

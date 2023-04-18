@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import type { RestaurantInfo } from '@pages/Restaurant/types'
 import { RouteComponentProps, DefaultParams } from 'wouter'
 import { Jumbotron, Menu, Dishes } from './components'
 
 function Restaurant({ params }: RouteComponentProps<DefaultParams>): JSX.Element {
-	const [restaurant, setRestaurant] = useState()
+	const [restaurant, setRestaurant] = useState<RestaurantInfo>()
 
 	useEffect(() => {
 		const controller = new AbortController()

@@ -1,5 +1,5 @@
 import { Container } from '@components'
-import { RestaurantPrice } from '../../types'
+import { RestaurantInfo, RestaurantPrice } from '@pages/Restaurant/types'
 import styles from './Jumbotron.module.pcss'
 
 type RestaurantPriceCategoriesType = {
@@ -23,17 +23,7 @@ const RestaurantPriceRubbles: RestaurantPriceRubblesType = {
 }
 
 type JumbotronProps = {
-	items?: {
-		image: string,
-		alt: string,
-		title: string,
-		price: string,
-		category: string[],
-		time: {
-			from: string,
-			to: string
-		},
-	}
+	items?: RestaurantInfo
 }
 
 function Jumbotron({ items = undefined }: JumbotronProps): JSX.Element | null {

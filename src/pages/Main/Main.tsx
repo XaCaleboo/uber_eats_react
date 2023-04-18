@@ -1,9 +1,15 @@
-import { useEffect, useState } from 'react'
-
+import { useEffect, useMemo, useState } from 'react'
+import type { Restaurant } from './types'
 import { Search, Restaurants } from './components'
 
 function Main(): JSX.Element {
-	const [restaurants, setRestaurants] = useState([])
+	const [restaurants, setRestaurants] = useState<Array<Restaurant>>([])
+	const [search, setSearch] = useState<string>('')
+	const filteredRestaurants = useMemo<Array<Restaurant>>(() => (
+		restaurants.filter(({ title }: Restaurant) => (
+			title.toLowerCase().includes(search.toLowerCase())
+		))
+	), [restaurants, search])
 
 	useEffect(() => {
 		const controller = new AbortController()
@@ -19,8 +25,11 @@ function Main(): JSX.Element {
 
 	return (
 		<>
-			<Search />
-			<Restaurants items={restaurants} />
+			<Search
+				value={search}
+				onChange={(event) => setSearch(event.target.value)}
+			/>
+			<Restaurants items={filteredRestaurants} />
 		</>
 	)
 }

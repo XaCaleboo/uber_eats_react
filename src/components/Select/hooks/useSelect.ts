@@ -26,12 +26,12 @@ const useSelect = ({
 	const minIndex = 0
 	const maxIndex = options.length - 1
 
-	const [opened, setOpened] = useState(false)
-	const [activeIndex, setActiveIndex] = useState(minIndex)
-	const [selectedIndex, setSelectedIndex] = useState(() => (
+	const [opened, setOpened] = useState<boolean>(false)
+	const [activeIndex, setActiveIndex] = useState<number>(minIndex)
+	const [selectedIndex, setSelectedIndex] = useState<number>(() => (
 		options.findIndex((element) => element.value === value)
 	))
-	const [ignoreBlur, setIgnoreBlur] = useState(false)
+	const [ignoreBlur, setIgnoreBlur] = useState<boolean>(false)
 
 	const updateMenuState = (newOpenedState: SetStateAction<boolean>, callFocus = true) => {
 		setOpened(newOpenedState)

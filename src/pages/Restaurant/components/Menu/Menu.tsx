@@ -1,9 +1,13 @@
 import { Container } from '@components'
-import type { CategoriesProps, Category } from '@pages/Restaurant/types'
+import type { Category, RestaurantInfo } from '@pages/Restaurant/types'
 import clsx from 'clsx'
 import styles from './Menu.module.pcss'
 
-function Menu({ items = undefined }: CategoriesProps): JSX.Element | null {
+type MenuProps = {
+	items?: RestaurantInfo
+}
+
+function Menu({ items = undefined }: MenuProps): JSX.Element | null {
 	if (!items) return null
 
 	return (
